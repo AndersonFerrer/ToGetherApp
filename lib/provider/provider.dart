@@ -6,18 +6,35 @@ class ThemeProvider extends ChangeNotifier {
   ThemeData currentTheme;
   ThemeProvider({required bool isDarkMode})
       : currentTheme = isDarkMode
-            ? ThemeData(useMaterial3: true, colorScheme: ColorScheme.dark())
-            : ThemeData(useMaterial3: true, colorScheme: ColorScheme.light());
+            ? ThemeData(
+                useMaterial3: true,
+                colorScheme: ColorScheme.dark(),
+                scaffoldBackgroundColor: Colors.black,
+                appBarTheme: AppBarTheme(
+                  backgroundColor: Colors.black,
+                ),
+              )
+            : ThemeData(
+                useMaterial3: true,
+                colorScheme: ColorScheme.light(),
+                scaffoldBackgroundColor: Colors.white);
 
   lightMode() {
-    currentTheme =
-        ThemeData(useMaterial3: true, colorScheme: ColorScheme.light());
+    currentTheme = ThemeData(
+      useMaterial3: true,
+      colorScheme: ColorScheme.light(),
+      scaffoldBackgroundColor: Colors.white,
+    );
     notifyListeners();
   }
 
   darkMode() {
-    currentTheme =
-        ThemeData(useMaterial3: true, colorScheme: ColorScheme.dark());
+    currentTheme = ThemeData(
+      useMaterial3: true,
+      colorScheme: ColorScheme.dark(),
+      appBarTheme: AppBarTheme(backgroundColor: Colors.black),
+      scaffoldBackgroundColor: Colors.black,
+    );
     notifyListeners();
   }
 }
