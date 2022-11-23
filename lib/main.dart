@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:redsocial_u2/index.dart';
+import 'package:redsocial_u2/provider/login_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -10,7 +11,8 @@ void main() async {
     providers: [
       ChangeNotifierProvider(
         create: (context) => ThemeProvider(isDarkMode: Preferences.theme),
-      )
+      ),
+      ChangeNotifierProvider(create: (_) => LoginProvider())
     ],
     child: const MyApp(),
   ));
