@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:redsocial_u2/index.dart';
+// import 'package:redsocial_u2/screens/welcome_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: Provider.of<ThemeProvider>(context).currentTheme,
+      // home: const WelcomeScreen(),
       home: const BodyScreen(),
     );
   }

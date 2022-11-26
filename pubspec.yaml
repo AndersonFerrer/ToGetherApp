@@ -41,6 +41,8 @@ dependencies:
   iconsax: ^0.0.8
   curved_navigation_bar: ^1.0.3
   google_fonts: ^3.0.1
+  flutter_staggered_grid_view: ^0.6.2
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:

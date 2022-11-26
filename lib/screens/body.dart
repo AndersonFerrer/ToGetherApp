@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:redsocial_u2/index.dart';
+import 'package:redsocial_u2/screens/search_delegate_screen.dart';
+import 'package:redsocial_u2/screens/search_screen.dart';
 import 'package:redsocial_u2/variables.dart';
 
 class BodyScreen extends StatefulWidget {
@@ -14,6 +16,12 @@ class BodyScreen extends StatefulWidget {
 class _BodyScreenState extends State<BodyScreen> {
   int _page = 0;
   final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
+  List<Widget> pages = [
+    Home(),
+    SearchScreen(),
+    ScreenDelegate(title: 'Hello'),
+    Text('4'),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +31,7 @@ class _BodyScreenState extends State<BodyScreen> {
       ),
       body: SizedBox(
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(_page.toString(), textScaleFactor: 10.0),
-            ],
-          ),
+          child: pages[_page],
         ),
       ),
       bottomNavigationBar: CurvedNavigationBar(
@@ -68,6 +71,53 @@ class _BodyScreenState extends State<BodyScreen> {
         },
         letIndexChange: (index) => true,
       ),
+    );
+  }
+}
+
+class Home extends StatelessWidget {
+  const Home({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircleAvatar(
+              backgroundImage: NetworkImage(
+                'https://cdn.pixabay.com/photo/2015/09/18/00/24/robin-944887_960_720.jpg',
+              ),
+              radius: 30,
+            ),
+            SizedBox(width: 24),
+            SizedBox(
+              width: 250,
+              height: 60,
+              child: TextFormField(
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          const BorderSide(width: 2, color: Colors.grey),
+                      borderRadius: BorderRadius.circular(35),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          const BorderSide(width: 2, color: Colors.grey),
+                      borderRadius: BorderRadius.circular(35),
+                    ),
+                    hintText: '¿En que estas pensando?',
+                    hintStyle: const TextStyle(color: Colors.grey)),
+              ),
+            )
+          ],
+        )
+      ],
     );
   }
 }
