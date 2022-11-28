@@ -16,30 +16,34 @@ class _CustomAppBarState extends State<CustomAppBar> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            'ToGether',
-            style: GoogleFonts.pacifico(
-                fontSize: 32,
-                color: (Preferences.theme == true) ? blanco : verdeClaro),
-          ),
-          IconButton(
-              icon: (Icon(
-                (Preferences.theme == false) ? Iconsax.moon : Iconsax.sun_1,
-                size: 42,
-                color: (Preferences.theme == true) ? blanco : verdeClaro,
-              )),
-              onPressed: () {
-                Preferences.theme = !Preferences.theme;
-                final themeP =
-                    Provider.of<ThemeProvider>(context, listen: false);
-                Preferences.theme ? themeP.darkMode() : themeP.lightMode();
-                setState(() {});
-              }),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.only(top: 42),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              'ToGether',
+              style: GoogleFonts.elMessiri(
+                  fontSize: 36,
+                  color: (Preferences.theme == true) ? blanco : verdeClaro,
+                  fontWeight: FontWeight.bold),
+            ),
+            IconButton(
+                icon: (Icon(
+                  (Preferences.theme == false) ? Iconsax.moon : Iconsax.sun_1,
+                  size: 42,
+                  color: (Preferences.theme == true) ? blanco : verdeClaro,
+                )),
+                onPressed: () {
+                  Preferences.theme = !Preferences.theme;
+                  final themeP =
+                      Provider.of<ThemeProvider>(context, listen: false);
+                  Preferences.theme ? themeP.darkMode() : themeP.lightMode();
+                  setState(() {});
+                }),
+          ],
+        ),
       ),
     );
   }

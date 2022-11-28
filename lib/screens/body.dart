@@ -6,7 +6,6 @@ import 'package:redsocial_u2/screens/homescren.dart';
 import 'package:redsocial_u2/screens/perfilscreen.dart';
 import 'package:redsocial_u2/screens/reelpage.dart';
 import 'package:redsocial_u2/screens/searchpage.dart';
-import 'package:redsocial_u2/variables.dart';
 
 class BodyScreen extends StatefulWidget {
   const BodyScreen({super.key});
@@ -32,7 +31,8 @@ class _BodyScreenState extends State<BodyScreen> {
       }),
     ];
     return Scaffold(
-      body: SafeArea(child: pages[_page]),
+      body: Container(child: pages[_page]),
+      extendBody: true,
       bottomNavigationBar: CurvedNavigationBar(
         key: _bottomNavigationKey,
         index: 0,
@@ -62,7 +62,7 @@ class _BodyScreenState extends State<BodyScreen> {
             ),
             child: CircleAvatar(
               backgroundImage: NetworkImage(
-                  'https://scontent.fchm1-1.fna.fbcdn.net/v/t39.30808-6/277368748_4254987277938186_776529483703659197_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeG0F7G7Xoozobb20QnrJ_bCqa2vtRM1tZepra-1EzW1l_foMC0ye7rw-XXLHTePlG-ioAgf6ekDwNsDEdWNKDF0&_nc_ohc=MoGJf4J837UAX_-aSl8&_nc_ht=scontent.fchm1-1.fna&oh=00_AfAEsQDW0UGMiIZnK7RUgmb8Z-nizCDRHX4kUd94B7Lt_Q&oe=6381F9A6'),
+                  'https://cdn.pixabay.com/photo/2022/10/19/22/15/cat-7533717__340.jpg'),
               radius: 20,
             ),
           ),

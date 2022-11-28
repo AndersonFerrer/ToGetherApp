@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:redsocial_u2/index.dart';
-import 'package:redsocial_u2/provider/login_provider.dart';
+import 'package:redsocial_u2/screens/verify_auth.dart';
+import 'package:redsocial_u2/widgets/snapbar.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,6 +13,7 @@ void main() async {
       ChangeNotifierProvider(
         create: (context) => ThemeProvider(isDarkMode: Preferences.theme),
       ),
+      ChangeNotifierProvider(create: (_) => AuthService()),
       ChangeNotifierProvider(create: (_) => LoginProvider())
     ],
     child: const MyApp(),
@@ -25,10 +27,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'ToGether App',
+      scaffoldMessengerKey: CustomSnapBar.msgkey,
       debugShowCheckedModeBanner: false,
       theme: Provider.of<ThemeProvider>(context).currentTheme,
-      home: const BodyScreen(),
+      home: const VerificarAuth(),
     );
   }
 }
