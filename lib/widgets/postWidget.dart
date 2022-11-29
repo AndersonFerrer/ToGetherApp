@@ -6,7 +6,19 @@ import 'package:flutter/material.dart';
 import 'package:redsocial_u2/index.dart';
 
 class PostWidget extends StatefulWidget {
-  const PostWidget({super.key});
+  const PostWidget({
+    super.key,
+    this.name,
+    this.photo,
+    this.image,
+    this.date,
+    this.likes,
+  });
+  final String? name;
+  final String? photo;
+  final String? image;
+  final String? date;
+  final int? likes;
 
   @override
   State<PostWidget> createState() => _PostWidgetState();
@@ -30,8 +42,7 @@ class _PostWidgetState extends State<PostWidget> {
                   children: [
                     CircleAvatar(
                       radius: 25,
-                      backgroundImage: NetworkImage(
-                          'https://cdn.pixabay.com/photo/2022/11/22/02/29/beach-7608602__340.jpg'),
+                      backgroundImage: NetworkImage(widget.photo!),
                     ),
                     SizedBox(
                       width: 12,
@@ -41,12 +52,12 @@ class _PostWidgetState extends State<PostWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Michael Bombilla',
+                          widget.name!,
                           style: GoogleFonts.poppins(
                               fontWeight: FontWeight.w500, fontSize: 16),
                         ),
                         Text(
-                          'Mie at 12:30 Am',
+                          widget.date!,
                           style: GoogleFonts.poppins(
                               color: Colors.grey, fontSize: 12),
                         )
@@ -62,7 +73,7 @@ class _PostWidgetState extends State<PostWidget> {
             ),
           ),
           Image.network(
-            'https://cdn.pixabay.com/photo/2022/09/25/09/54/kimono-7477942__340.jpg',
+            widget.image!,
             height: 280,
             width: double.infinity,
             fit: BoxFit.cover,
@@ -142,7 +153,7 @@ class _PostWidgetState extends State<PostWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '917 Me gusta',
+                    '${widget.likes!} Me gusta',
                     style: GoogleFonts.poppins(
                         fontSize: 14, fontWeight: FontWeight.w500),
                     textAlign: TextAlign.start,
