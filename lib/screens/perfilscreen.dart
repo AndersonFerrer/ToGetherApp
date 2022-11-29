@@ -46,7 +46,9 @@ class _PerfilScreenState extends State<PerfilScreen> {
                           bottomLeft: Radius.circular(30),
                           bottomRight: Radius.circular(30)),
                       child: Image.network(
-                        Preferences.portada,
+                        (Preferences.portada == '')
+                            ? 'https://cdn.pixabay.com/photo/2022/04/24/02/30/stairs-7152763__340.jpg'
+                            : Preferences.portada,
                         width: double.infinity,
                         height: 200,
                         fit: BoxFit.cover,
@@ -57,7 +59,9 @@ class _PerfilScreenState extends State<PerfilScreen> {
                       left: 154,
                       child: CircleAvatar(
                         radius: 50,
-                        backgroundImage: NetworkImage(Preferences.img),
+                        backgroundImage: NetworkImage((Preferences.img == '')
+                            ? 'https://cdn.pixabay.com/photo/2022/04/24/02/30/stairs-7152763__340.jpg'
+                            : Preferences.img),
                       ),
                     ),
                     Positioned(

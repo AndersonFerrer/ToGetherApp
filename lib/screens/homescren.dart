@@ -32,8 +32,9 @@ class HomeScreen extends StatelessWidget {
                       Stack(children: [
                         HistoriaWidget(
                           nombre: 'Tu historia',
-                          image:
-                              'https://cdn.pixabay.com/photo/2014/04/12/14/59/portrait-322470_960_720.jpg',
+                          image: (Preferences.img == '')
+                              ? 'https://cdn.pixabay.com/photo/2022/11/10/12/48/kangaroo-7582773_640.jpg'
+                              : Preferences.img,
                         ),
                         Positioned(
                           right: 7,

@@ -1,4 +1,4 @@
-package com.example.redsocial_u2
+package com.togetherinc.togetherapp
 
 import io.flutter.embedding.android.FlutterActivity
 
