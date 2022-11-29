@@ -37,7 +37,8 @@ class CustomSnapBar {
                       SizedBox(
                         height: 24,
                       ),
-                      (msg == 'Bienvenido')
+                      (msg == 'Bienvenido' ||
+                              msg == 'Datos actualizados correctamente')
                           ? Icon(
                               Iconsax.verify,
                               color: Colors.white,

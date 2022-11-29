@@ -10,9 +10,9 @@ class Preferences {
   static String _pais = '';
   static int _genero = 1;
   static String _descripcion = '';
-  static String _email = '';
+  static String _portada = '';
   static String _celular = '';
-  static String _twitter = '';
+  static String _usuario = '';
   static String _web = '';
   static bool _theme = false;
 
@@ -99,15 +99,15 @@ class Preferences {
     _prefs.setString('descripcion', descripcion);
   }
 
-  //EMAIL
+  //portada
 
-  static String get email {
-    return _prefs.getString('email') ?? _email;
+  static String get portada {
+    return _prefs.getString('portada') ?? _portada;
   }
 
-  static set email(String email) {
-    _email = email;
-    _prefs.setString('email', email);
+  static set portada(String portada) {
+    _portada = portada;
+    _prefs.setString('portada', portada);
   }
 
   //CELULAR
@@ -121,15 +121,15 @@ class Preferences {
     _prefs.setString('celular', celular);
   }
 
-  //TWITTER
+  //usuario
 
-  static String get twitter {
-    return _prefs.getString('twitter') ?? _twitter;
+  static String get usuario {
+    return _prefs.getString('usuario') ?? _usuario;
   }
 
-  static set twitter(String twitter) {
-    _twitter = twitter;
-    _prefs.setString('twitter', twitter);
+  static set usuario(String usuario) {
+    _usuario = usuario;
+    _prefs.setString('usuario', usuario);
   }
 
   //WEB SITE

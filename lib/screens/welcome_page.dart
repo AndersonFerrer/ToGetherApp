@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:redsocial_u2/index.dart';
-import 'package:redsocial_u2/variables.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -14,7 +13,7 @@ class WelcomeScreen extends StatelessWidget {
         color: Colors.white,
         width: double.infinity,
         child: Padding(
-          padding: const EdgeInsets.all(24),
+          padding: const EdgeInsets.only(top: 40, left: 24, right: 24),
           child: Column(children: [
             SizedBox(
               width: double.infinity,

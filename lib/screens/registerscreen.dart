@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 
 import 'package:redsocial_u2/index.dart';
 
-import 'package:redsocial_u2/variables.dart';
-
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
 
@@ -120,13 +118,22 @@ class _RegisterFormState extends State<RegisterForm> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Image(
+                  image: AssetImage('assets/logo2.png'),
+                  width: 150,
+                ),
+                SizedBox(
+                  height: 48,
+                ),
                 SizedBox(
                   width: double.infinity,
                   child: Text(
                     'Registrarse',
                     textAlign: TextAlign.start,
                     style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500, fontSize: 32),
+                        fontWeight: FontWeight.w500,
+                        fontSize: 32,
+                        color: Colors.black),
                   ),
                 ),
                 SizedBox(
@@ -144,6 +151,52 @@ class _RegisterFormState extends State<RegisterForm> {
                 ),
                 SizedBox(
                   height: 48,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: 175,
+                      child: TextFormField(
+                        style: GoogleFonts.poppins(
+                            color: Colors.black, fontSize: 16),
+                        autocorrect: false,
+                        keyboardType: TextInputType.emailAddress,
+                        cursorColor: verdeClaro,
+                        decoration: _inputDecoration(
+                          label: 'Nombre',
+                          hintText: 'Roberto',
+                          /* prefixIcon: Icon(
+                                    Icons.email,
+                                    color: verdeOscuro,
+                                  ), */
+                        ),
+                        onChanged: (value) => Preferences.nombre = value,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 175,
+                      child: TextFormField(
+                        style: GoogleFonts.poppins(
+                            color: Colors.black, fontSize: 16),
+                        autocorrect: false,
+                        keyboardType: TextInputType.emailAddress,
+                        cursorColor: verdeClaro,
+                        decoration: _inputDecoration(
+                          label: 'Apellido',
+                          hintText: 'Gonzales',
+                          /* prefixIcon: Icon(
+                                    Icons.email,
+                                    color: verdeOscuro,
+                                  ), */
+                        ),
+                        onChanged: (value) => Preferences.apellido = value,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 24,
                 ),
                 TextFormField(
                   style: GoogleFonts.poppins(color: Colors.black, fontSize: 16),

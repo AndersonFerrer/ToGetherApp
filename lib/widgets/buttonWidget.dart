@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:redsocial_u2/index.dart';
-import 'package:redsocial_u2/variables.dart';
 
 class ButtonWidget extends StatelessWidget {
   const ButtonWidget(
@@ -33,8 +32,9 @@ class ButtonWidget extends StatelessWidget {
       padding: padding,
       onPressed: onPressed(),
       shape: RoundedRectangleBorder(
-          borderRadius: radioBorde!,
-          side: BorderSide(width: 1.5, color: border!)),
+        borderRadius: radioBorde!,
+      ),
+
 /*       disabledColor: verdeClaro, */
       color: bg,
       elevation: 1,

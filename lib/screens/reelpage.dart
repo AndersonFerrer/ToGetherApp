@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:redsocial_u2/index.dart';
 import 'package:redsocial_u2/mock_Data.dart/mock.dart';
 import 'package:redsocial_u2/widgets/reel_detail.dart';
@@ -13,6 +12,7 @@ class ReelScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: false,
@@ -23,7 +23,7 @@ class ReelScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            padding: EdgeInsets.only(right: 17),
+            padding: const EdgeInsets.only(right: 17),
             onPressed: () => {},
             icon: const Icon(Iconsax.camera),
             color: Colors.white,

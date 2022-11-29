@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:redsocial_u2/index.dart';
-import 'package:redsocial_u2/variables.dart';
 
 class CustomAppBar extends StatefulWidget {
   const CustomAppBar({super.key});

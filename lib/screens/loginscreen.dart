@@ -3,11 +3,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 
 import 'package:redsocial_u2/index.dart';
 
-import 'package:redsocial_u2/variables.dart';
 import 'package:redsocial_u2/widgets/snapbar.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -129,13 +127,22 @@ class _LoginFormState extends State<LoginForm> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Image(
+                  image: AssetImage('assets/logo2.png'),
+                  width: 150,
+                ),
+                SizedBox(
+                  height: 48,
+                ),
                 SizedBox(
                   width: double.infinity,
                   child: Text(
                     'Iniciar Sesión',
                     textAlign: TextAlign.start,
                     style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500, fontSize: 32),
+                        fontWeight: FontWeight.w500,
+                        fontSize: 32,
+                        color: Colors.black),
                   ),
                 ),
                 SizedBox(

@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:redsocial_u2/index.dart';
-import 'package:redsocial_u2/variables.dart';
 
 class PostWidget extends StatefulWidget {
   const PostWidget({super.key});

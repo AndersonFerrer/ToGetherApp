@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:redsocial_u2/index.dart';
-import 'package:redsocial_u2/variables.dart';
+
 import 'package:redsocial_u2/widgets/historia_widget.dart';
 import 'package:redsocial_u2/widgets/postWidget.dart';
 
@@ -71,6 +71,12 @@ class HomeScreen extends StatelessWidget {
                 height: 1,
                 color: Colors.grey,
               ),
+              PostWidget(),
+              PostWidget(),
+              PostWidget(),
+              PostWidget(),
+              PostWidget(),
+              PostWidget(),
               PostWidget(),
               PostWidget(),
               PostWidget(),

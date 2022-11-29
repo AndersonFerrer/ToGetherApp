@@ -90,7 +90,7 @@ class ReelDetail extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 80,
         )
       ],

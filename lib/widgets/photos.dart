@@ -22,7 +22,7 @@ class Photos extends StatelessWidget {
     }
 
     return GridView.custom(
-      padding: EdgeInsets.only(top: 12, bottom: 0),
+      padding: const EdgeInsets.only(top: 12, bottom: 0),
       gridDelegate: SliverQuiltedGridDelegate(
         crossAxisCount: 7,
         mainAxisSpacing: 8,
