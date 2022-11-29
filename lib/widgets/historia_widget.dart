@@ -5,8 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:redsocial_u2/variables.dart';
 
 class HistoriaWidget extends StatelessWidget {
-  const HistoriaWidget({super.key, this.nombre = 'Anderson'});
+  const HistoriaWidget({super.key, this.nombre = 'Anderson', this.image});
   final String? nombre;
+  final String? image;
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +21,7 @@ class HistoriaWidget extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(1.5),
               child: CircleAvatar(
-                backgroundImage: NetworkImage(
-                    'https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916_960_720.png'),
+                backgroundImage: NetworkImage(image!),
               ),
             ),
             decoration: BoxDecoration(
